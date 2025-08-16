@@ -106,10 +106,12 @@ class TestCase(unittest.TestCase):
         class Some: pass
 
         repr_output = repr(Some.__dataclass_params__)
-        expected_output = "_DataclassParams(init=True,repr=True," \
-                          "eq=True,order=False,unsafe_hash=False,frozen=True," \
-                          "match_args=True,kw_only=False," \
-                          "slots=True,weakref_slot=False)"
+        expected_output = (
+            "_DataclassParams(init=True, repr=True, "
+            "eq=True, order=False, unsafe_hash=False, frozen=True, "
+            "match_args=True, kw_only=False, "
+            "slots=True, weakref_slot=False)"
+        )
         self.assertEqual(repr_output, expected_output)
 
     def test_dataclass_params_signature(self):
